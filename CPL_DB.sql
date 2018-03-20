@@ -176,7 +176,7 @@ VALUES
 ('MyBluePrint','310 Davenport Rd Suite 200','Toronto','ON','M4T 2Y3','Canada','1-888-901-5505','Damian Matheson','Curriculum Planning','damian.matheson@myBlueprint.ca','Approved'),
 ('National Film Board of Canada','P.O. Box 6100, Station Centre-ville','Montreal','QC','H3C 3H5','Canada','1-800-267-7710','','Educational Films','info@nfb.ca','Approved'),
 ('Recorded Books','270 Skipjack Road','Prince Frederick','MD','20678','USA','1-877-732-2898','Bryan Messersmith','Audio Books','bmessersmith@recordedbooks.com','Approved'),
-('Statista Inc','55 Broad Street; 30th floor','New York','NY','10004','USA','212-433-2269','Johannes Meindl','Database for Market and Consumer Research','Johannes.Meindl@statista.com','Not Approved'),
+('Statista Inc','55 Broad Street; 30th floor','New York','NY','10004','USA','212-433-2269','Johannes Meindl','Database for Market and Consumer Research','Johannes.Meindl@statista.com','Unapproved'),
 ('STEM Village','1 Yonge Street, Suite 1801','Toronto','ON','M5E 1W7','Canada','416-684-3289','Mark Applebaum','STEM kits','mark@stemvillage.com','Approved'),
 ('Taylor & Francis Group','6000 NW Broken Sound Parkway','Boca Raton','FL','33487','USA','818-416-5775','Susan Sanders','Digital Reference and E-books','susan.sanders@taylorandfrancis.com','Approved'),
 ('Third Iron','PO Box 270400','St. Paul','MN','55127','USA','855-649-7607 x702','Hayley J. H. Harris','Integration of Journal Platforms','hayley@thirdiron.com','Approved'),
