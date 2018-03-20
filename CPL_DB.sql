@@ -317,10 +317,11 @@ VALUES
 ('C20001','Education'),
 ('C20002','Small Business Administration');
 
+
 INSERT INTO DONOR (PAY_SOURCE_ID,DONOR_TYPE,DONOR_LNAME,DONOR_FNAME,DONOR_PHONE,DONOR_EMAIL,DONOR_REASON)
 VALUES
-('D30001','Individual','Freidman','Edna','647-656-5623','efriedman@yahoo.com','Husbands Will'),
-('D30002','Non-Profit Organization','Tennet',,'565-565-2060',,'Program Sponsorship'),
-('D30003','For-Profit Organization','Glasgow',,'210-365-2061',,'Goodwill'),
-('D30004','For-Profit Organization','Exxon',,'712-865-2062',,'Goodwill'),
-('D30005','Government Grant','EPA',,'891-565-8746',,'Program Sponsorship');
+('D30001','Individual','Freidman','Edna','647-656-5623','efriedman@yahoo.com','Husband Will'),
+('D30002','Non-Profit Organization','Tennet','','565-565-2060','','Program Sponsorship'),
+('D30003','For-Profit Organization','Glasgow','','210-365-2061','','Goodwill'),
+('D30004','For-Profit Organization','Exxon','','712-865-2062','','Goodwill'),
+('D30005','Government Grant','EPA','','891-565-8746','','Program Sponsorship');
