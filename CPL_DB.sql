@@ -139,30 +139,6 @@ CREATE TABLE DONOR (
 
 
 
-INSERT INTO CONTRACT (VENDOR_ID,CONTRACT_ID,CONTRACT_TYPE)
-VALUES
-    	(1,'1000001','Contract'),
-    	(1,'1000002','Catalog'),
-    	(1,'1000003','Blanket'),
-    	(1,'1000004','Standing'),
-    	(5,'1000005','Service'),
-    	(5,'1000006','Service'),
-	(6,'1000007','Service'),
-	(7,'1000008','Service'),
-	(8,'1000009','Service'),
-	(8,'1000010','Blanket'),
-	(9,'1000011','Blanket'),
-	(9,'1000012','Service'),
-	(9,'1000013','Contract'),
-	(10,'1000014','Contract'),
-	(11,'1000015','Catalog'),
-	(12,'1000016','Contract')
-	(13,'1000017','Standing')
-	(14,'1000018','Standing'),
-	(15,'1000019','Contract'),
-	(16,'1000020','Contract');
-	
-
 INSERT INTO VENDOR (VENDOR_NAME,VENDOR_STREET,VENDOR_CITY,VENDOR_PROVINCE,VENDOR_ZIP,VENDOR_COUNTRY,VENDOR_PHONE,VENDOR_CONTACT,VENDOR_DESCRIPT,VENDOR_EMAIL,VENDOR_STATUS)
 VALUES
  ('Association for Computing Machinery','2 Penn Plaza, Suite 701','New York','NY','10121-0701','USA','212-869-7440','Corine Bailey','Computers','acmhelp@acm.org','Approved'),
@@ -185,6 +161,29 @@ VALUES
 ('Variant Edition','10132 – 151 Street','Edmonton','AB',,'Canada','780-452-9886','Brandon Schatz','Comics and Prose Books','library@variantedmonton.com','Pending Approval'),
 ('World Book','180 N LaSalle St','Chicago','IL',60601,'USA','800-967-5325','Mike Tieman','Children Online Books','tieman@shaw.ca ','Approved'),
 ('WWD.com','Santa Monica Boulevard','Los Angeles','CA',,,'310.484.2536','Randi Segal','Online Pop Culture Magazine','randi.segal@wwd.com','Approved');
+
+INSERT INTO CONTRACT (VENDOR_ID,CONTRACT_ID,CONTRACT_TYPE)
+VALUES
+    	(1,'1000001','Contract'),
+    	(1,'1000002','Catalog'),
+    	(1,'1000003','Blanket'),
+    	(1,'1000004','Standing'),
+    	(5,'1000005','Service'),
+    	(5,'1000006','Service'),
+	(6,'1000007','Service'),
+	(7,'1000008','Service'),
+	(8,'1000009','Service'),
+	(8,'1000010','Blanket'),
+	(9,'1000011','Blanket'),
+	(9,'1000012','Service'),
+	(9,'1000013','Contract'),
+	(10,'1000014','Contract'),
+	(11,'1000015','Catalog'),
+	(12,'1000016','Contract')
+	(13,'1000017','Standing')
+	(14,'1000018','Standing'),
+	(15,'1000019','Contract'),
+	(16,'1000020','Contract');
 
 INSERT INTO PRODUCT (PRODUCT_ID,PRODUCT_NAME,PRODUCT_PARENT_ID,PRODUCT_DESC,PRODUCT_EST_PRICE)
 VALUES
@@ -213,7 +212,25 @@ VALUES
 ('SW800000','Software',,'Software',),
 ('NP900000','Newspapers',,'Newspapers',);
 
-INSERT INTO ORDER_ITEM(PRODUCT (PRODUCT_ID,ORDER_ID,ORDER_ITEM_QUAN)
+INSERT INTO ORDER (ORDER_ID,VENDOR_ID,EMPLOYEE_ID,ORDER_DATE)
+VALUES
+('ORD100000',1,'KM001','5-Jan-18'),
+('ORD100001',9,'KM001','8-Jan-18'),
+('ORD100002',11,'KM001','11-Jan-18'),
+('ORD100003',13,'KM001','15-Jan-18'),
+('ORD100004',14,'KM001','19-Jan-18'),
+('ORD100005',14,'KM001','22-Jan-18'),
+('ORD100006',16,'HM001','26-Jan-18'),
+('ORD100007',1,'KM001','29-Jan-18'),
+('ORD100008',18,'KM001','1-Feb-18'),
+('ORD100009',8,'HM001','1-Feb-18'),
+('ORD100010',12,'KM001','2-Feb-18'),
+('ORD100011',8,'KM001','5-Feb-18'),
+('ORD100012',8,'KM001','8-Feb-18'),
+('ORD100013',19,'KM001','12-Feb-18'),
+('ORD100014',8,'KM001','15-Feb-18');	 
+
+INSERT INTO ORDER_ITEM (PRODUCT (PRODUCT_ID,ORDER_ID,ORDER_ITEM_QUAN)
 VALUES
 ('BK002530','ORD100002',12),
 ('BK002896','ORD100004',12),
@@ -231,23 +248,7 @@ VALUES
 ('BK056328','ORD100008',12),
 ('TR259788','ORD100009',24);
 		       
-INSERT INTO ORDER (ORDER_ID,VENDOR_ID,EMPLOYEE_ID,ORDER_DATE)
-VALUES
-('ORD100000',1,'KM001','5-Jan-18'),
-('ORD100001',9,'KM001','8-Jan-18'),
-('ORD100002',11,'KM001','11-Jan-18'),
-('ORD100003',13,'KM001','15-Jan-18'),
-('ORD100004',14,'KM001','19-Jan-18'),
-('ORD100005',14,'KM001','22-Jan-18'),
-('ORD100006',16,'HM001','26-Jan-18'),
-('ORD100007',1,'KM001','29-Jan-18'),
-('ORD100008',18,'KM001','1-Feb-18'),
-('ORD100009',8,'HM001','1-Feb-18'),
-('ORD100010',12,'KM001','2-Feb-18'),
-('ORD100011',8,'KM001','5-Feb-18'),
-('ORD100012',8,'KM001','8-Feb-18'),
-('ORD100013',19,'KM001','12-Feb-18'),
-('ORD100014',8,'KM001','15-Feb-18');	       
+      
 		       
 INSERT INTO INVOICE (INVOICE_ID,EMPLOYEE_ID,ORDER_ID,VENDOR_ID,INVOICE_AMT,INVOICE_RECEIPT,INVOICE_INPUT_DATE,INVOICE_DUE_DATE,INVOICE_STATUS,INVOICE_DATE)
 VALUES
@@ -286,6 +287,17 @@ VALUES
 ('PM100005',14,'TFG3641','KM001','15-Mar-18',135.00),
 ('PM100006',16,'TB021687','KM001','15-Mar-18',584.00),
 ('PM100007',1,'ACM145566','KM001','15-Mar-18',987.00);	
+			
+INSERT INTO PAY_SOURCE (PAY_SOURCE_ID,PAY_SOURCE_DESC,PAY_SOURCE_TOTAL,PAY_SOURCE_RELEASE,PAY_SOURCE_TYPE)
+VALUES
+('B20001','Library System Budget',100000.00,'1-Jan-18','B'),
+('C20001','City Contribution',25000.00,'8-Jan-18','C'),
+('C20002','City Contribution',15000.00,'8-Jan-18','C'),
+('D30001','Donation',20000.00,'18-Jan-18','D'),
+('D30002','Donation',3500.00,'18-Jan-18','D'),
+('D30003','Donation',8000.00,'25-Jan-18','D'),
+('D30004','Donation',500.00,'31-Jan-18','D'),
+('D30005','Donation',1500.00,'31-Jan-18','D');	
 		      
 INSERT INTO FUNDING (PAYMENT_ID,PAY_SOURCE_ID,FUNDING_APPROVER)
 VALUES
@@ -298,18 +310,7 @@ VALUES
 ('PM100006','B20001','HM001'),
 ('PM100007','B20001','HM001'),
 ('PM100007','D30001','HM001');
-		       
-		     
-INSERT INTO PAY_SOURCE (PAY_SOURCE_ID,PAY_SOURCE_DESC,PAY_SOURCE_TOTAL,PAY_SOURCE_RELEASE,PAY_SOURCE_TYPE)
-VALUES
-('B20001','Library System Budget',100000.00,'1-Jan-18','B'),
-('C20001','City Contribution',25000.00,'8-Jan-18','C'),
-('C20002','City Contribution',15000.00,'8-Jan-18','C'),
-('D30001','Donation',20000.00,'18-Jan-18','D'),
-('D30002','Donation',3500.00,'18-Jan-18','D'),
-('D30003','Donation',8000.00,'25-Jan-18','D'),
-('D30004','Donation',500.00,'31-Jan-18','D'),
-('D30005','Donation',1500.00,'31-Jan-18','D');		       
+		       	       
 		       
 INSERT INTO CITY (PAY_SOURCE_ID,CITY_DEPT)
 VALUES		       
