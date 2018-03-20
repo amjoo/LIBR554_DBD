@@ -1,3 +1,3 @@
 # LIBR554_DBD
 
-MS SQL Server Code for database design project. 
+MS SQL Server script for database design project. 
