@@ -37,14 +37,17 @@ CREATE TABLE CONTRACT(
 	PRIMARY KEY (VENDOR_ID, CONTRACT_ID),		
 	FOREIGN KEY (VENDOR_ID) REFERENCES VENDOR (VENDOR_ID)
 	); 
-
+	
+-- Builds a self-referencing table where a product can be a child member of a larger product category
 CREATE TABLE PRODUCT (
 	PRODUCT_ID		CHAR(8)	NOT NULL	UNIQUE,
 	PRODUCT_NAME		VARCHAR(255) NOT NULL,
 	PRODUCT_PARENT_ID	CHAR(8),
 	PRODUCT_DESC		VARCHAR(255),
 	PRODUCT_EST_PRICE	NUMERIC(10,2),					
-	PRIMARY KEY (PRODUCT_ID));	
+	PRIMARY KEY (PRODUCT_ID),
+	FOREIGN KEY (PRODUCT_PARENT_ID) REFERENCES PRODUCT(PRODUCT_ID)
+	);	
 	
 	CREATE TABLE EMPLOYEE(
 	EMPLOYEE_ID CHAR(5) NOT NULL UNIQUE,
@@ -210,7 +213,7 @@ VALUES
 ('BK002896','E-Books','BK000000','Digital E-Books',40.00),
 ('BK056328','Comic Books','BK000000','Comics',10.00),
 ('FE154337','Circulation Desk','FE100000','Front Desk',3000),
-('TR259788','Online Training','MG200000','Online Training Subscription',60),
+('TR259788','Online Training','TR200000','Online Training Subscription',60),
 ('JM359788','Online Magazine','JM300000','Online Magazine Subscription',20),
 ('JM356953','Online Journal','JM300000','Online Journal Subscription',25),
 ('DB469833','Database Subscription','DB400000','Online Database Subscriptions',60),
@@ -220,16 +223,17 @@ VALUES
 ('OS789433','Printing Paper','OS700000','Printer Paper',60),
 ('SW877463','Microsoft Office','SW800000','Computer Software',500),
 ('NP984526','Online Newspaper','NP900000','Online Newspaper Subscription',20),
-('BK000000','Books','','Books',NULL),
-('FE100000','Furniture and Equipment','','Furniture and Equipment',NULL),
-('TR200000','Training','','Training',NULL),
-('JM300000','Journal & Magazine','','Journal & Magazine',NULL),
-('DB400000','Database Subscriptions','','Database Subscriptions',NULL),
-('ST500000','STEM Related Materials','','STEM Related Materials',NULL),
-('CM600000','Computer and Related Machinery','','Computer and Related Machinery',NULL),
-('OS700000','Office Supply','','Office Supply',NULL),
-('SW800000','Software','','Software',NULL),
-('NP900000','Newspapers','','Newspapers', NULL);
+('BK000000','Books',NULL,'Books',NULL),
+('FE100000','Furniture and Equipment',NULL,'Furniture and Equipment',NULL),
+('TR200000','Training',NULL,'Training',NULL),
+('JM300000','Journal & Magazine',NULL,'Journal & Magazine',NULL),
+('DB400000','Database Subscriptions',NULL,'Database Subscriptions',NULL),
+('ST500000','STEM Related Materials',NULL,'STEM Related Materials',NULL),
+('CM600000','Computer and Related Machinery',NULL,'Computer and Related Machinery',NULL),
+('OS700000','Office Supply',NULL,'Office Supply',NULL),
+('SW800000','Software',NULL,'Software',NULL),
+('NP900000','Newspapers',NULL,'Newspapers', NULL);
+
 
 INSERT INTO EMPLOYEE (EMPLOYEE_ID,EMPLOYEE_LNAME,EMPLOYEE_FNAME,EMPLOYEE_MID_INI,EMPLOYEE_PSWD)
 VALUES	
