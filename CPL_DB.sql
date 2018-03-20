@@ -289,10 +289,8 @@ VALUES
 ('LY599414','TJ002','ORD100011',8,289.00,'12-Mar-18','16-Mar-18','31-Mar-18','Pending Approval','12-Feb-18'),
 ('LY599415','TJ002','ORD100012',8,841.00,'12-Mar-18','16-Mar-18','31-Mar-18','Pending Approval','13-Feb-18'),
 ('WB65232','TJ002','ORD100013',19,1235.00,'12-Mar-18','16-Mar-18','31-Mar-18','Pending Approval','14-Feb-18'),
-('LY599416','TJ002','ORD100014',8,869.00,'12-Mar-18','16-Mar-18','31-Mar-18','Pending Approval','15-Feb-18'),
-('WB65233','TJ002','ORD100015',19,125.32,'12-Mar-18','16-Mar-18','31-Mar-18','Pending Approval','16-Feb-18'),
-('WB65234','TJ002','ORD100016',19,1487.98,'12-Mar-18','16-Mar-18','31-Mar-18','Pending Approval','17-Feb-18'),
-('RB565223','TJ002','ORD100017',11,504.05,'12-Mar-18','16-Mar-18','31-Mar-18','Pending Approval','18-Feb-18');
+('LY599416','TJ002','ORD100014',8,869.00,'12-Mar-18','16-Mar-18','31-Mar-18','Pending Approval','15-Feb-18');
+
 	    
 INSERT INTO EMPLOYEE (EMPLOYEE_ID,EMPLOYEE_LNAME,EMPLOYEE_FNAME,EMPLOYEE_MID_INI,EMPLOYEE_PSWD)
 VALUES	
