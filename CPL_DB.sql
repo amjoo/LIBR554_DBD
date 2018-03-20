@@ -1,6 +1,6 @@
-CREATE DATABASE	CPL_DB
+CREATE DATABASE	CPL_DB;
 
-USE CPL_DB
+USE CPL_DB;
 
 -- Create a table that auto increments with the addition of each new vendor
 
