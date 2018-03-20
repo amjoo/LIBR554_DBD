@@ -5,7 +5,7 @@ USE CPL_DB
 -- Create a table that auto increments with the addition of each new vendor
 
 CREATE TABLE VENDOR(
-	VENDOR_ID			INT		NOT NULL		AUTO_INCREMENT, 
+	VENDOR_ID			INT 	IDENTITY(1,1) 	NOT NULL, 
 	VENDOR_NAME			VARCHAR(50),	
 	VENDOR_STREET			VARCHAR(50),	
 	VENDOR_CITY			VARCHAR(50),
