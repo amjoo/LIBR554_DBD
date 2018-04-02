@@ -17,6 +17,17 @@ WHERE		p.INVOICE_ID IS NULL
 --Example:
 EXECUTE GetUnpaidPastDueInvoice 'Lynda'
 
+--Query 3: Which employee processed an order
+
+SELECT	po.PURCHASE_ORDER_DATE,
+	e.EMPLOYEE_FNAME + ' ' + e.EMPLOYEE_LNAME AS 'EMPLOYEE NAME'
+FROM	PURCHASE_ORDER po,
+	VENDOR v,
+	EMPLOYEE e 
+WHERE	po.VENDOR_ID = v.VENDOR_ID AND
+	po.EMPLOYEE_ID = e.EMPLOYEE_ID AND
+	v.VENDOR_NAME = 'Association for Computing Machinery'
+ORDER BY po.PURCHASE_ORDER_DATE DESC
 
 --Query 4: Top 5 Vendors 
 SELECT TOP(5)
