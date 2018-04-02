@@ -1,5 +1,4 @@
 --Query 1
-
 CREATE PROCEDURE GetUnpaidPastDueInvoice
 	@VendorName	VARCHAR(255)
 AS
@@ -19,7 +18,7 @@ WHERE		p.INVOICE_ID IS NULL
 EXECUTE GetUnpaidPastDueInvoice 'Lynda'
 
 
---Query 4 Top 5 Vendors 
+--Query 4: Top 5 Vendors 
 SELECT TOP(5)
 	v.VENDOR_NAME, SUM(i.INVOICE_AMT) AS TOTAL_AMT
 FROM 	VENDOR v, INVOICE i
